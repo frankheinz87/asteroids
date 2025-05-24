@@ -5,6 +5,10 @@ class Player(CircleShape):
     def __init__(self, x, y):
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 180
+        surface=pygame.Surface((2*PLAYER_RADIUS,2*PLAYER_RADIUS))
+        pygame.draw.circle(surface,"red",pygame.Vector2((PLAYER_RADIUS,PLAYER_RADIUS)),self.radius,2)
+        self.image = surface 
+        self.rect = surface.get_rect(center=self.position)
     
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
