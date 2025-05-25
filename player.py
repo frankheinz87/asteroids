@@ -6,7 +6,7 @@ class Player(CircleShape):
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 180
         surface=pygame.Surface((2*PLAYER_RADIUS,2*PLAYER_RADIUS))
-        pygame.draw.circle(surface,"red",pygame.Vector2((PLAYER_RADIUS,PLAYER_RADIUS)),self.radius,2)
+        pygame.draw.circle(surface,"red",(int(PLAYER_RADIUS),int(PLAYER_RADIUS)),int(self.radius),2)
         self.image = surface 
         self.rect = surface.get_rect(center=self.position)
     
